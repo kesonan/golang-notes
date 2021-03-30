@@ -53,7 +53,7 @@ message HelloReply {
 > `protoc` 和 `protoc-gen-go-grpc`
 
 ### 2、点击做侧边栏运行按钮生成pb.go
-![run](run.png)
+![run](./resource/run.png)
 
 ### 3、server端代码
 ```go
@@ -98,7 +98,7 @@ client.SayHello(context.Background(), &greet.Req{})
 v.1.36.0
 
 ### 大纲
-![grpc](grpc.png)
+![grpc](./resource/grpc.png)
 
 ### client
 我们从上面的demo的client端作为入口来进入源码，从client使用我们可以得知，
