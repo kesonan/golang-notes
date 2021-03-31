@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+//x:generate protoc --go_out=%DIR% --go-grpc_out=%DIR% %BASE%
+
+package greet;
+
+message HelloReq{
+  string name = 1;
+}
+
+message HelloReply{
+  string msg = 2;
+}
+
+service Greeter{
+  rpc SayHello(HelloReq) returns (HelloReply);
+}
