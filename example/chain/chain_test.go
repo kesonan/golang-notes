@@ -32,5 +32,5 @@ func ExampleChain() {
 		return nil
 	}
 
-	fn()
+	_ = fn()
 }
