@@ -33,4 +33,8 @@ func ExampleChain() {
 	}
 
 	_ = fn()
+	// Output:
+	// 1
+	// 2
+	// 3
 }
