@@ -3,9 +3,10 @@ package tree
 import "math"
 
 type Node struct {
-	value interface{}
-	left  *Node
-	right *Node
+	value  interface{}
+	left   *Node
+	right  *Node
+	parent *Node
 }
 
 func (n *Node) AddLeft(value interface{}) *Node {
@@ -13,7 +14,10 @@ func (n *Node) AddLeft(value interface{}) *Node {
 		n.left.value = value
 	}
 
-	n.left = &Node{value: value}
+	n.left = &Node{
+		value:  value,
+		parent: n,
+	}
 	return n.left
 }
 
@@ -22,8 +26,53 @@ func (n *Node) AddRight(value interface{}) *Node {
 		n.right.value = value
 	}
 
-	n.right = &Node{value: value}
+	n.right = &Node{
+		value:  value,
+		parent: n,
+	}
 	return n.right
+}
+
+func (n *Node) Append(parent *Node, value interface{}, compare func(n1, n2 interface{}) int) *Node {
+	node := &Node{
+		value:  value,
+		parent: parent,
+	}
+	if n == nil {
+		return node
+	}
+
+	if result := compare(n.value, value); result > 0 {
+		ret := n.left.Append(n, value, compare)
+		if n.left == nil {
+			n.left = ret
+		}
+
+		return ret
+	} else if result < 0 {
+		ret := n.right.Append(n, value, compare)
+		if n.right == nil {
+			n.right = ret
+		}
+
+		return ret
+	} else {
+		return n
+	}
+}
+
+func (n *Node) Search(value interface{}, compare func(n1, n2 interface{}) int) *Node {
+	if n == nil {
+		return nil
+	}
+
+	if result := compare(n.value, value); result > 0 {
+		return n.left.Search(value, compare)
+	} else if result < 0 {
+		return n.right.Search(value, compare)
+	} else {
+		return n
+	}
 }
 
 func (n *Node) Depth() int {

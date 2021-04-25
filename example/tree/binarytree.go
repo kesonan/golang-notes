@@ -10,10 +10,6 @@ type binaryTree struct {
 	root *Node
 }
 
-func NewBinaryTree(v interface{}) BinaryTree {
-	return newBinaryTree(&Node{value: v})
-}
-
 func (b *binaryTree) Traversal(tp TraversalType) ([]*Node, error) {
 	switch tp {
 	case PreOrder:
@@ -49,7 +45,7 @@ func (b *binaryTree) Clean() {
 	b.root = nil
 }
 
-func newBinaryTree(root *Node) BinaryTree {
+func NewBinaryTree(root *Node) BinaryTree {
 	return &binaryTree{root: root}
 }
 
