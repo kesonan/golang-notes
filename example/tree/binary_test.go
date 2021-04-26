@@ -94,6 +94,50 @@ func TestBinarySortTree(t *testing.T) {
 
 }
 
+func TestBalanceTree(t *testing.T) {
+	type data struct {
+		value  interface{}
+		expect bool
+	}
+	avl := NewAVLTree(func(parent, node interface{}) int {
+		return parent.(int) - node.(int)
+	})
+	avl.Append(66)
+	avl.Append(60)
+	avl.Append(77)
+	avl.Append(75)
+	avl.Append(88)
+	assert.True(t, avl.Balance())
+	assert.Equal(t, "60,66,75,77,88", convertNode2ArrayString(avl.traversalInOrder(), ","))
+
+	avl.Append(99)
+	assert.True(t, avl.Balance())
+	assert.Equal(t, "60,66,75,77,88,99", convertNode2ArrayString(avl.traversalInOrder(), ","))
+	assert.True(t, func() bool {
+		root := avl.root
+		b := root.parent == nil && root.value.(int) == 77
+		b = b && root.left.value.(int) == 66 && root.left.parent == root
+		b = b && root.left.left.value.(int) == 60 && root.left.left.parent == root.left
+		b = b && root.left.right.value.(int) == 75 && root.left.right.parent == root.left
+		b = b && root.right.left == nil
+		b = b && root.right.right.value.(int) == 99 && root.right.right.parent == root.right
+		return b
+	}())
+
+	avl.Append(81)
+	assert.True(t, avl.Balance())
+	assert.Equal(t, "60,66,75,77,81,88,99", convertNode2ArrayString(avl.traversalInOrder(), ","))
+
+	avl.Append(100)
+	assert.True(t, avl.Balance())
+	assert.Equal(t, "60,66,75,77,81,88,99,100", convertNode2ArrayString(avl.traversalInOrder(), ","))
+
+	avl.Append(101)
+	assert.True(t, avl.Balance())
+	assert.Equal(t, "60,66,75,77,81,88,99,100,101", convertNode2ArrayString(avl.traversalInOrder(), ","))
+	assert.Equal(t, 88, avl.root.value.(int))
+}
+
 func convertNode2ArrayString(list []*Node, sep string) string {
 	var join []string
 	for _, item := range list {

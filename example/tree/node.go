@@ -151,3 +151,7 @@ func (n *Node) Count() int {
 
 	return count + 1
 }
+
+func (n *Node) depthSub() int {
+	return n.left.Depth() - n.right.Depth()
+}
