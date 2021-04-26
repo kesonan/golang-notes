@@ -14,6 +14,8 @@ func (t *AVLTree) Balance() bool {
 	return t.root.depthSub() >= -1 && t.root.depthSub() <= 1
 }
 
+// Append
+// todo(keson): 节点旋转复杂的case补充
 func (t *AVLTree) Append(v interface{}) *Node {
 	n := t.BinarySortTree.Append(v)
 	vInt := t.root.depthSub()
