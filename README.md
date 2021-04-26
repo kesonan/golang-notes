@@ -8,3 +8,4 @@
     - [tree](./example/tree)
         - [binary tree](./example/tree/binarytree.go)
         - [binary sort tree](./example/tree/binarysorttree.go)
+        - [avl tree](./example/tree/balancebinarytree.go)
