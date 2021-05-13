@@ -1,10 +1,12 @@
 package snippet
 
 import (
-	"github.com/stretchr/testify/assert"
+	"fmt"
 	"math/rand"
 	"sync/atomic"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 type Foo struct {
@@ -29,5 +31,17 @@ func TestAnyCase(t *testing.T) {
 		assert.False(t, atomic.CompareAndSwapInt32(&cur, 1, 1))
 		atomic.StoreInt32(&cur, 1)
 		assert.True(t, atomic.CompareAndSwapInt32(&cur, 1, 1))
+	})
+
+	t.Run("channel", func(t *testing.T) {
+		ch := make(chan chan int, 0)
+		go func() {
+			ch <- make(chan int)
+		}()
+
+		select {
+		case v := <-ch:
+			fmt.Println(v)
+		}
 	})
 }
