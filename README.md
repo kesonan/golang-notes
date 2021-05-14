@@ -9,3 +9,7 @@
         - [binary tree](./example/tree/binarytree.go)
         - [binary sort tree](./example/tree/binarysorttree.go)
         - [avl tree](./example/tree/balancebinarytree.go)
+- LeetCode
+    - [6. Z 字形变换](./example/leetcode/006_test.go)
+    - [8. 字符串转换整数 (atoi)](./example/leetcode/008_test.go)
+    - [11. 盛最多水的容器 ](./example/leetcode/011_test.go) 
