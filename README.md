@@ -21,4 +21,5 @@
   - [19. 删除链表倒数第N个节点 ](./example/leetcode/018_test.go)
   - [22. 括号生成 ](./example/leetcode/022_test.go)
   - [23. 合并k个升序链表 ](./example/leetcode/023_test.go)
-  - [24. 两两交换链表中的节点 ](./example/leetcode/024_test.go) 
+  - [24. 两两交换链表中的节点 ](./example/leetcode/024_test.go)
+  - [25. K个一组翻转链表 ](./example/leetcode/025_test.go) 
