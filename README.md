@@ -22,4 +22,6 @@
   - [22. 括号生成 ](./example/leetcode/022_test.go)
   - [23. 合并k个升序链表 ](./example/leetcode/023_test.go)
   - [24. 两两交换链表中的节点 ](./example/leetcode/024_test.go)
-  - [25. K个一组翻转链表 ](./example/leetcode/025_test.go) 
+  - [25. K个一组翻转链表 ](./example/leetcode/025_test.go)
+  - [30. 串连所有单词的子串 ](./example/leetcode/030_test.go)
+  - [31. 下一个排列 ](./example/leetcode/031_test.go) 

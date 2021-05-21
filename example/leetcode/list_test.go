@@ -25,7 +25,7 @@ func NewList(list []int) *ListNode {
 func (n *ListNode) Array() []int {
 	var (
 		list   []int
-		cursor *ListNode = n
+		cursor = n
 	)
 	for cursor != nil {
 		list = append(list, cursor.Val)
