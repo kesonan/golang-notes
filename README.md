@@ -29,5 +29,8 @@
   - [145.二叉树的后序遍历 ](./example/leetcode/145_test.go)
   - [面试题 01.01.判定字符是否唯一](./example/leetcode/interview_01.01_test.go)
   - [面试题 01.02.判定是否互为字符串重排](./example/leetcode/interview_01.02_test.go)
+  - [面试题 01.03.URL化](./example/leetcode/interview_01.03_test.go)
+  - [面试题 01.04.回文排列](./example/leetcode/interview_01.04_test.go)
+  - [面试题 01.05.一次编辑](./example/leetcode/interview_01.05_test.go)
   - [面试题 02.08.环路检测](./example/leetcode/interview_02.08_test.go)
   - [面试题 03.04.化栈为队](./example/leetcode/interview_03.04_test.go) 
