@@ -5,6 +5,7 @@
   - [grpc源码学习日志](grpc.md)
 - 学习demo
   - [grpc chain](./example/chain/chain_test.go)
+  - [grpc backoff](./example/backoff/backoff_test.go)
   - [tree](./example/tree)
     - [binary tree](./example/tree/binarytree.go)
     - [binary sort tree](./example/tree/binarysorttree.go)
