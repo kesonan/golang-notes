@@ -4,8 +4,9 @@
   - [go module学习日志](go-module.md)
   - [grpc源码学习日志](grpc.md)
 - grpc 系列
-  - [grpc chain](./example/chain/chain_test.go)
-  - [grpc backoff](./example/backoff/backoff_test.go)
+  - [chain](./example/chain/chain_test.go)
+  - [backoff](./example/backoff/backoff_test.go)
+  - [resolver.Builder](./example/grpc/resolver/builder/builder.go)
 - 学习demo
   - [tree](./example/tree)
     - [binary tree](./example/tree/binarytree.go)
