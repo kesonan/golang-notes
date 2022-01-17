@@ -186,4 +186,4 @@ gRPC 的 `grpc.Dial` 或者 `gprc.DialContext` 的 `target` 并非一定是 serv
 如果用户没有提供 `resolver.Builder` ， gRPC 会根据默认 `scheme` （`resolver.GetDefaultScheme()`） 去查找。
 
 ## 源码
-https://github.com/anqiansong/golang-notes/tree/main/example/grpc/resolver/builder/builder.go
+https://github.com/anqiansong/golang-notes/tree/main/example/grpc/resolver

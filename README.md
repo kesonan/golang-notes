@@ -6,7 +6,8 @@
 - grpc 系列
   - [chain](./example/chain/chain_test.go)
   - [backoff](./example/backoff/backoff_test.go)
-  - [resolver.Builder](./example/grpc/resolver/builder/builder.go)
+  - [resolver](./example/grpc/resolver)
+  - [balancer](./example/grpc/balancer)
 - 学习demo
   - [tree](./example/tree)
     - [binary tree](./example/tree/binarytree.go)
