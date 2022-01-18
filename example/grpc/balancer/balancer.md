@@ -483,7 +483,7 @@ output:  hi
 
 ## 总结
 grpc 通过服务发现或者直连形式获取到 gRPC server 的实例的 endpoints，然后通知负载均衡器进行 `SubConn` 更新，对于新加入的 endpoint 进行实例创建，移出废弃的 endpoint，
-最后通过状态更新将状态为 `Idle` 的 `SubConn` 进行管理，gRPC 在调用 `Connect`时，则会通过负载均衡器中的 `Picker` 去按照某一个负载均衡算法选择一个 `SubConn`
+最后通过状态更新将状态为 `Idle` 的 `SubConn` 进行管理，gRPC 在调用 `Invoke`时，则会通过负载均衡器中的 `Picker` 去按照某一个负载均衡算法选择一个 `SubConn`
 创建链接，如果创建成功则不再进行其他 `SubConn` 的尝试，否则会按照一定的退避算法进行重试，直到退避失败或者创建链接成功为止。
 
 自定义负载均衡器的核心逻辑在于对 `Picker` 的实现，从 `SubConn` 列表中按照负载均衡算法选择一个 `SubConn` 创建链接，自定义负载均衡器和 `Resolver` 一样都是用到了插件式编程提供了扩展能力。
