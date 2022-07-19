@@ -559,7 +559,7 @@ github.com/anqiansong/retract v1.0.1
 |---|---|---|---|
 |go list -m|go list -m [-u] [-retracted] [-versions] [list flags] [modules]|查看module信息|go list -m all|
 |go mod init|go mod init [module-path]|在工作目录初始化并创建一个go.mod文件|go mod init demo|
-|go mod tidy|go mod tidy [-e] [-v]|整理go.mod文件|go mode tidy|
+|go mod tidy|go mod tidy [-e] [-v]|整理go.mod文件|go mod tidy|
 |go clean -modcache|go clean [-modcache]|清除module缓存|go clean -modcache|
 
 ## Proxy
